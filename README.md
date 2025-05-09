@@ -1,63 +1,223 @@
-# Project-Aura
-# WAZARD Pro - WhatsApp Automation Chrome Extension
+# Project Aura- WhatsApp Automation Chrome Extension
 
-## Project Structure
+A powerful and future-proof WhatsApp automation Chrome extension that allows for advanced messaging functionality, contact management, and AI-assisted communications.
+
+![WAZARD Pro Logo](docs/images/wazard-pro-banner.png)
+
+## 🚀 Features
+
+- **Message Automation**: Send personalized messages to WhatsApp contacts
+- **CSV Import**: Bulk import contacts from CSV files
+- **Message Templates**: Create and save reusable message templates
+- **Spin Text Support**: Create message variations with spin syntax
+- **Smart Throttling**: Customizable delay settings and queue management
+- **Auto-Recovery**: Continues operation after tab crashes or session expiration
+- **Real-time Dashboard**: Monitor message delivery status and analytics
+- **Team Collaboration**: Share campaigns across team members (Pro tier)
+
+## 📋 Installation
+
+### For Users
+
+1. Download the latest release from the [Releases page](https://github.com/yourusername/wazard-pro/releases)
+2. Unzip the file
+3. Open Chrome and navigate to `chrome://extensions/`
+4. Enable "Developer mode" in the top right corner
+5. Click "Load unpacked" and select the unzipped folder
+6. WAZARD Pro will appear in your extensions list
+
+### For Developers
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/wazard-pro.git
+
+# Navigate to the project directory
+cd wazard-pro
+
+# Install dependencies
+npm install
+
+# Build the extension
+npm run build
+
+# For development with hot reload
+npm start
 ```
-wazard-pro/
-├── manifest.json
-├── package.json
-├── webpack.config.js
-├── public/
-│   ├── icons/
-│   │   ├── icon16.png
-│   │   ├── icon48.png
-│   │   ├── icon128.png
-│   │   └── wazard-logo.svg
-│   └── index.html
-├── src/
-│   ├── background/
-│   │   ├── index.js
-│   │   ├── messaging.js
-│   │   ├── scheduler.js
-│   │   └── analytics.js
-│   ├── content/
-│   │   ├── index.js
-│   │   ├── injector.js
-│   │   ├── whatsapp-api.js
-│   │   └── utils.js
-│   ├── popup/
-│   │   ├── index.js
-│   │   ├── App.jsx
-│   │   ├── components/
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── ContactManager.jsx
-│   │   │   ├── MessageBuilder.jsx
-│   │   │   ├── Settings.jsx
-│   │   │   ├── LogPanel.jsx
-│   │   │   ├── AIAssistant.jsx
-│   │   │   └── common/
-│   │   │       ├── Button.jsx
-│   │   │       ├── Input.jsx
-│   │   │       ├── Tabs.jsx
-│   │   │       ├── Toggle.jsx
-│   │   │       └── Dropdown.jsx
-│   │   └── styles/
-│   │       └── tailwind.css
-│   ├── services/
-│   │   ├── database.js
-│   │   ├── csvParser.js
-│   │   ├── spinText.js
-│   │   ├── aiService.js
-│   │   └── authService.js
-│   └── utils/
-│       ├── throttle.js
-│       ├── validator.js
-│       ├── logger.js
-│       └── constants.js
-└── .gitignore
+
+## 🛠️ Tech Stack
+
+- **Manifest V3**: Future-proof Chrome extension architecture
+- **React**: Modern component-based UI
+- **Tailwind CSS**: Utility-first CSS framework
+- **IndexedDB**: Client-side storage
+- **Service Workers**: Background processing and messaging
+
+## 📖 Usage Guide
+
+### Setting Up Your First Campaign
+
+1. Click on the WAZARD Pro extension icon
+2. Log in to WhatsApp Web
+3. Navigate to the "Messages" tab in WAZARD Pro
+4. Create a new message template or select an existing one
+5. Import contacts via CSV or enter them manually
+6. Configure sending settings (delay, throttling, etc.)
+7. Start your campaign and monitor progress in real-time
+
+### Using Spin Text
+
+WAZARD Pro supports spin text syntax for message variations:
+
+```
+Hello {there|hi|hey}! How are you {doing today|feeling|going}?
+```
+
+This will randomly select one option from each bracketed group when sending messages.
+
+## 🔒 Privacy & Security
+
+WAZARD Pro is designed with privacy in mind:
+
+- No message content is sent to our servers
+- Contact information remains on your device
+- Optional analytics are anonymized and can be disabled
+- GDPR-compliant data handling
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📬 Contact
+
+For support or inquiries, please open an issue or contact us at support@wazard-pro.com
+
+---
+
+## Repository Structure
+
+```
+.gitignore
+LICENSE
+README.md
+manifest.json
+package.json
+webpack.config.js
+public/
+├── icons/
+│   ├── icon16.png
+│   ├── icon48.png
+│   ├── icon128.png
+│   └── wazard-logo.svg
+└── index.html
+src/
+├── background/
+│   ├── index.js
+│   ├── messaging.js
+│   ├── scheduler.js
+│   └── analytics.js
+├── content/
+│   ├── index.js
+│   ├── injector.js
+│   ├── whatsapp-api.js
+│   └── utils.js
+├── popup/
+│   ├── index.js
+│   ├── App.jsx
+│   ├── components/
+│   └── styles/
+├── services/
+│   ├── database.js
+│   ├── csvParser.js
+│   └── spinText.js
+└── utils/
+    ├── throttle.js
+    └── validator.js
+```
+
+## .gitignore
+
+```
+# Dependencies
+node_modules/
+
+# Production
+/dist
+/build
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Extension specific
+*.pem
+*.crx
+```
+
+## LICENSE
+
+```
+MIT License
+
+Copyright (c) 2025 WAZARD Pro
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 ## manifest.json
+
 ```json
 {
   "manifest_version": 3,
@@ -100,6 +260,7 @@ wazard-pro/
 ```
 
 ## package.json
+
 ```json
 {
   "name": "wazard-pro",
@@ -111,6 +272,12 @@ wazard-pro/
     "build": "webpack --config webpack.config.js",
     "test": "jest"
   },
+  "keywords": [
+    "whatsapp",
+    "automation",
+    "messaging",
+    "chrome-extension"
+  ],
   "author": "WAZARD Team",
   "license": "MIT",
   "dependencies": {
@@ -148,14 +315,15 @@ wazard-pro/
 ```
 
 ## webpack.config.js
+
 ```javascript
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'cheap-module-source-map',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  devtool: process.env.NODE_ENV === 'production' ? false : 'cheap-module-source-map',
   entry: {
     popup: path.resolve('src/popup/index.js'),
     background: path.resolve('src/background/index.js'),
@@ -163,7 +331,8 @@ module.exports = {
   },
   output: {
     path: path.resolve('dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    clean: true
   },
   module: {
     rules: [
@@ -183,7 +352,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
       }
     ]
   },
@@ -202,11 +374,18 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'vendor'
+    }
   }
 };
 ```
 
 ## public/index.html
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -214,6 +393,20 @@ module.exports = {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WAZARD Pro</title>
+  <style>
+    body {
+      width: 400px;
+      min-height: 500px;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    #root {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
   <div id="root"></div>
@@ -222,6 +415,7 @@ module.exports = {
 ```
 
 ## src/background/index.js
+
 ```javascript
 import { setupMessageListener } from './messaging';
 import { initScheduler } from './scheduler';
@@ -262,7 +456,7 @@ const handleInstalled = (details) => {
     });
     
     // Open onboarding tab
-    chrome.tabs.create({ url: 'https://wazard-pro.com/welcome' });
+    chrome.tabs.create({ url: 'https://web.whatsapp.com/' });
   } else if (details.reason === 'update') {
     // Extension updated
     const currentVersion = chrome.runtime.getManifest().version;
@@ -278,6 +472,7 @@ init();
 ```
 
 ## src/background/messaging.js
+
 ```javascript
 import { scheduleMessages, getQueueStatus, pauseQueue, resumeQueue } from './scheduler';
 
@@ -342,6 +537,7 @@ const checkWhatsAppStatus = async () => {
 ```
 
 ## src/background/scheduler.js
+
 ```javascript
 import { v4 as uuidv4 } from 'uuid';
 
@@ -586,6 +782,7 @@ const persistQueueState = async () => {
 ```
 
 ## src/background/analytics.js
+
 ```javascript
 // Initialize analytics tracking
 export const initAnalytics = async () => {
@@ -651,17 +848,11 @@ const trackEvent = async (event, data = {}) => {
   
   // Save updated analytics data
   await chrome.storage.local.set({ analyticsData: updatedData });
-  
-  // Optional: Send to server if user has opted in
-  const settings = await chrome.storage.local.get('settings');
-  if (settings.settings?.analyticsOptIn) {
-    // This would be implemented when backend is set up
-    // sendToAnalyticsServer(event, data, updatedData);
-  }
 };
 ```
 
 ## src/content/index.js
+
 ```javascript
 import { injectWhatsAppApi } from './injector';
 import { sendMessage, checkWhatsAppReady } from './whatsapp-api';
@@ -732,6 +923,7 @@ init();
 ```
 
 ## src/content/injector.js
+
 ```javascript
 // Inject WhatsApp API interaction code
 export const injectWhatsAppApi = () => {
@@ -802,126 +994,4 @@ export const injectWhatsAppApi = () => {
           
           return { success: true };
         } catch (error) {
-          console.error('Error sending message:', error);
-          return { success: false, error: error.message };
-        }
-      },
-      
-      // Check if WhatsApp web is ready
-      isReady() {
-        // Verify if WhatsApp Store is available
-        if (!window.Store || !window.Store.Chat) {
-          return { ready: false, reason: 'WhatsApp web is not fully loaded' };
-        }
-        
-        // Check if user is logged in
-        if (!window.Store.Conn || !window.Store.Conn.isLoggedIn()) {
-          return { ready: false, reason: 'User is not logged in to WhatsApp' };
-        }
-        
-        return { ready: true };
-      }
-    };
-    
-    // Initialize WAZARD API
-    window.WAZARD.init();
-  `;
-  
-  // Append script to page
-  document.head.appendChild(script);
-  script.remove();
-  
-  console.log('WhatsApp API injected');
-};
-```
-
-## src/content/whatsapp-api.js
-```javascript
-// Send WhatsApp message using injected API
-export const sendMessage = async (phone, message) => {
-  return new Promise((resolve, reject) => {
-    // Create a unique ID for this request
-    const requestId = 'req_' + Date.now();
-    
-    // Create and dispatch custom event
-    const event = new CustomEvent('wazard_send_message', {
-      detail: { requestId, phone, message }
-    });
-    
-    // Setup listener for response
-    const responseListener = (e) => {
-      if (e.detail.requestId === requestId) {
-        window.removeEventListener('wazard_send_message_response', responseListener);
-        
-        if (e.detail.success) {
-          resolve(e.detail.result);
-        } else {
-          reject(new Error(e.detail.error));
-        }
-      }
-    };
-    
-    // Listen for response
-    window.addEventListener('wazard_send_message_response', responseListener);
-    
-    // Set timeout for response
-    setTimeout(() => {
-      window.removeEventListener('wazard_send_message_response', responseListener);
-      reject(new Error('Request timed out'));
-    }, 30000);
-    
-    // Dispatch request
-    window.dispatchEvent(event);
-    
-    // Execute script to handle the request
-    executeInPageContext(`
-      (function() {
-        const detail = ${JSON.stringify({ requestId, phone, message })};
-        
-        // Send message using WAZARD API
-        window.WAZARD.sendMessage(detail.phone, detail.message)
-          .then(result => {
-            window.dispatchEvent(new CustomEvent('wazard_send_message_response', {
-              detail: { requestId: detail.requestId, success: true, result }
-            }));
-          })
-          .catch(error => {
-            window.dispatchEvent(new CustomEvent('wazard_send_message_response', {
-              detail: { requestId: detail.requestId, success: false, error: error.message }
-            }));
-          });
-      })();
-    `);
-  });
-};
-
-// Check if WhatsApp is ready
-export const checkWhatsAppReady = async () => {
-  return new Promise((resolve, reject) => {
-    // Create a unique ID for this request
-    const requestId = 'req_' + Date.now();
-    
-    // Setup listener for response
-    const responseListener = (e) => {
-      if (e.detail.requestId === requestId) {
-        window.removeEventListener('wazard_check_ready_response', responseListener);
-        resolve(e.detail.status);
-      }
-    };
-    
-    // Listen for response
-    window.addEventListener('wazard_check_ready_response', responseListener);
-    
-    // Set timeout for response
-    setTimeout(() => {
-      window.removeEventListener('wazard_check_ready_response', responseListener);
-      reject(new Error('Request timed out'));
-    }, 5000);
-    
-    // Execute script to check if WhatsApp is ready
-    executeInPageContext(`
-      (function() {
-        const requestId = '${requestId}';
-        const status = window.WAZARD ? window.WAZARD.isReady() : { ready: false, reason: 'WAZARD not initialized' };
-        
-        window.dispatchEvent(new CustomEvent('w
+          console.error
