@@ -1,29 +1,37 @@
-# Aura - WhatsApp Automation Chrome Extension
+# Aura - WhatsApp Automation Chrome Extension 🚀
 
-Aura is a lightweight AI-powered Chrome Extension for automating WhatsApp outreach campaigns using personalized spin-text and CSV/Google Sheets contact lists.
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-## ⚡ Features
+Aura is a lightweight AI-powered Chrome Extension designed to streamline WhatsApp outreach campaigns. Ideal for marketers, small businesses, and anyone looking to scale personalized messaging.
 
-- CSV upload for contact lists
-- SpinText engine for randomized messages
-- Human-like delays between messages
-- One-click campaign start from extension popup
-- 100% client-side — no backend required
+---
+
+## ✨ Features
+- Upload contact lists via CSV.
+- SpinText engine for randomized, unique messages.
+- Human-like delays between sending messages for authenticity.
+- One-click campaign start from the extension popup.
+- 100% client-side — ensuring privacy and security.
+
+---
+
+## 🌟 Demo
+![Screenshot Placeholder](link-to-your-screenshot.png)
+*Sample screenshot of the Aura popup interface.*
+
+---
 
 ## 🛠 Tech Stack
-
 - JavaScript + Chrome Extension APIs
 - HTML/CSS for UI
 - No external libraries required
 
+---
+
 ## 🚀 Getting Started
+### Prerequisites
+- Google Chrome (Version X or newer)
+- A CSV file with contacts (see [Sample CSV](#sample-csv))
 
-1. Clone or download this repo
-2. Go to `chrome://extensions/`
-3. Enable "Developer mode"
-4. Click "Load unpacked" and select the `aura-extension/` folder
-5. Open [web.whatsapp.com](https://web.whatsapp.com)
-6. Click the Aura icon → Upload CSV → Enter message → Start
-
-### 🧪 Sample CSV
-
+### Installation
+1. Clone or download this repo:
